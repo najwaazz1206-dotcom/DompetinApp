@@ -44,14 +44,66 @@ Builder.load_string("""
 
         # ======================= TOP CARDS ============================
         BoxLayout:
+            orientation: 'vertical'
             size_hint_y: None
-            height: "140dp"
-            spacing: 20
+            height: "200dp" 
+            spacing: 10
 
-            # Pemasukan
+            # Pemasukan & Pengeluaran (HORIZONTAL)
+            BoxLayout:
+                orientation: 'horizontal'
+                spacing: 10
+                
+                # Pemasukan
+                BoxLayout:
+                    orientation: 'vertical'
+                    padding: "15dp"
+                    size_hint_y: 0.8
+                    canvas.before:
+                        Color:
+                            rgba: 0.88, 0.93, 0.83, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [20]
+                    Label:
+                        text: "Pemasukan"
+                        font_size: "18sp"
+                        color: 0,0,0,1
+                    Label:
+                        text: root.txt_pemasukan
+                        font_size: "22sp"
+                        bold: True
+                        color: 0.1, 0.5, 0.1, 1
+
+                # Pengeluaran
+                BoxLayout:
+                    orientation: 'vertical'
+                    padding: "15dp"
+                    size_hint_y: 0.8
+                    canvas.before:
+                        Color:
+                            rgba: 0.88, 0.93, 0.83, 1
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [20]
+                    Label:
+                        text: "Pengeluaran"
+                        font_size: "18sp"
+                        color: 0,0,0,1
+                    Label:
+                        text: root.txt_pengeluaran
+                        font_size: "22sp"
+                        bold: True
+                        color: 0.9, 0.2, 0.2, 1
+
+            # Total Saldo (VERTICAL)
+            # Total Saldo
             BoxLayout:
                 orientation: 'vertical'
-                padding: 15
+                padding: "10dp"
+                size_hint_y: 0.8
                 canvas.before:
                     Color:
                         rgba: 0.88, 0.93, 0.83, 1
@@ -59,48 +111,7 @@ Builder.load_string("""
                         pos: self.pos
                         size: self.size
                         radius: [20]
-                Label:
-                    text: "Pemasukan"
-                    font_size: "18sp"
-                    color: 0,0,0,1
-                Label:
-                    text: root.txt_pemasukan
-                    font_size: "22sp"
-                    bold: True
-                    color: 0.1, 0.5, 0.1, 1
-
-            # Pengeluaran
-            BoxLayout:
-                orientation: 'vertical'
-                padding: 15
-                canvas.before:
-                    Color:
-                        rgba: 0.88, 0.93, 0.83, 1
-                    RoundedRectangle:
-                        pos: self.pos
-                        size: self.size
-                        radius: [20]
-                Label:
-                    text: "Pengeluaran"
-                    font_size: "18sp"
-                    color: 0,0,0,1
-                Label:
-                    text: root.txt_pengeluaran
-                    font_size: "22sp"
-                    bold: True
-                    color: 0.9, 0.2, 0.2, 1
-
-            # Saldo
-            BoxLayout:
-                orientation: 'vertical'
-                padding: 15
-                canvas.before:
-                    Color:
-                        rgba: 0.88, 0.93, 0.83, 1
-                    RoundedRectangle:
-                        pos: self.pos
-                        size: self.size
-                        radius: [20]
+                
                 Label:
                     text: "Total Saldo"
                     font_size: "18sp"
@@ -115,7 +126,7 @@ Builder.load_string("""
         BoxLayout:
             size_hint_y: None
             height: "60dp"
-            spacing: 20
+            spacing: 10
             RoundedButton:
                 text: "+ Pemasukan"
                 bg_color: [0.2, 0.75, 0.3, 1]

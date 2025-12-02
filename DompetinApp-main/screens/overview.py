@@ -9,16 +9,17 @@ Builder.load_string("""
 <BudgetProgressItem>:
     orientation: 'vertical'
     size_hint_y: None
-    height: '70dp'
-    padding: [10, 5]
+    padding: [30, 20]
+    spacing: 20
     canvas.before:
         Color:
-            rgba: 1, 1, 1, 1
+            rgba:  1, 1, 1, 1
         RoundedRectangle:
             pos: self.pos
             size: self.size
             radius: [10,]
     
+
     BoxLayout:
         size_hint_y: 0.6
         Label:
@@ -55,8 +56,14 @@ Builder.load_string("""
 
 <OverviewContent>:
     orientation: 'vertical'
-    padding: 20
-    spacing: 10
+    padding: [30, 20]
+    spacing: 20
+    canvas.before:
+        Color:
+            rgba: 0.97, 0.93, 0.86, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
     Label:
         text: 'Ringkasan Budget'

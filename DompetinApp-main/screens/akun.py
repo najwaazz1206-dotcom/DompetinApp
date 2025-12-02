@@ -6,11 +6,35 @@ from components import RoundedButton
 Builder.load_string("""
 <AkunContent>:
     orientation: 'vertical'
-    padding: 20
+    padding: [30, 20]
     spacing: 20
+    canvas.before:
+        Color:
+            rgba: 0.97, 0.93, 0.86, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        size_hint_y: None
+        height: "140dp"
+        spacing: 10
+        Image:
+            source: 'Asset/wallet_logo.png'
+            size_hint_x: None
+            width: '140dp'
+        Label:
+            text: "Akun"
+            font_size: "32sp"
+            bold: True
+            color: 0,0,0,1
+            halign: 'left'
+            valign: 'middle'
+            text_size: self.size
 
     Label:
-        text: 'Profil Pengguna'
+        text: "Informasi Akun"
+        bold: True
         color: 0,0,0,1
         font_size: '18sp'
         size_hint_y: None

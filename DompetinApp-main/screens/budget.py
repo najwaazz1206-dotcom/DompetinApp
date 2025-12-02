@@ -8,8 +8,14 @@ from components import RoundedInput, RoundedButton
 Builder.load_string("""
 <BudgetContent>:
     orientation: 'vertical'
-    padding: 20
-    spacing: 15
+    padding: [30, 20]
+    spacing: 20
+    canvas.before:
+        Color:
+            rgba: 0.97, 0.93, 0.86, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
     
     Label:
         text: 'Buat Anggaran Baru'

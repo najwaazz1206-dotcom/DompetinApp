@@ -42,10 +42,10 @@ Builder.load_string("""
                 Line:
                     rounded_rectangle: (self.x, self.y, self.width, self.height, 10)
                     width: 1
-
+                    
         RoundedInput:
             id: cat_input
-            hint_text: 'Kategori (misal: makan, belanja)'
+            hint_text: 'Kategori'
 
         RoundedInput:
             id: amount_input
