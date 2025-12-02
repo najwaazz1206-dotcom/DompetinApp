@@ -19,7 +19,7 @@ from screens.overview import OverviewContent  # <-- Fitur baru (pengganti Grafik
 
 # --- KONFIGURASI WINDOW ---
 # Mengatur ukuran agar mirip tampilan HP
-Window.size = (360, 640)
+Window.maximize()
 Window.clearcolor = (0.97, 0.97, 0.97, 1)
 
 # --- DESAIN LAYOUT UTAMA (MAIN SCREEN) ---

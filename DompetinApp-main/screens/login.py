@@ -57,7 +57,7 @@ KV = """
                     radius: [25]
 
             Label:
-                text: "Login"
+                text: "Akun Dompetin"
                 font_size: dp(22)
                 bold: True
                 color: 1, 1, 1, 1
@@ -81,6 +81,7 @@ KV = """
                 text: "Login"
                 size_hint_y: None
                 height: dp(50)
+                color: 0, 0.25, 0, 1
                 bg_color: [0.8, 0.8, 0.8, 1]
                 font_size: dp(18)
                 on_release: root.do_login()
