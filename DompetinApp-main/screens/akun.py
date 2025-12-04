@@ -10,19 +10,26 @@ Builder.load_string("""
     spacing: 20
     canvas.before:
         Color:
-            rgba: 0.97, 0.93, 0.86, 1
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "Asset/bgakun.png"
+                    
+        Color:
+            rgba: 0.98, 0.94, 0.85, 0.2  
         Rectangle:
             pos: self.pos
             size: self.size
 
     BoxLayout:
         size_hint_y: None
-        height: "140dp"
+        height: "100dp"
         spacing: 10
         Image:
-            source: 'Asset/wallet_logo.png'
+            source: 'Asset/logodompetin.png'
             size_hint_x: None
-            width: '140dp'
+            width: '100dp'
         Label:
             text: "Akun"
             font_size: "32sp"
@@ -39,7 +46,24 @@ Builder.load_string("""
         font_size: '18sp'
         size_hint_y: None
         height: 40
-
+    
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: '150dp'
+        padding: 10
+        canvas.before:
+            Color:
+                rgba: 0.98, 0.94, 0.85, 0
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [10,]
+        Image:
+            source: 'Asset/profil.png'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            fit_mode: 'contain'
+                    
     BoxLayout:
         orientation: 'vertical'
         size_hint_y: None
@@ -47,7 +71,7 @@ Builder.load_string("""
         padding: 10
         canvas.before:
             Color:
-                rgba: 1, 1, 1, 1
+                rgba: 1, 1, 1, 0.7
             RoundedRectangle:
                 pos: self.pos
                 size: self.size

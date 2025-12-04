@@ -12,13 +12,21 @@ Builder.load_string("""
     spacing: 20
     canvas.before:
         Color:
-            rgba: 0.97, 0.93, 0.86, 1
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "Asset/cobabg.png"
+                    
+        Color:
+            rgba: 0.98, 0.94, 0.85, 0.2  
         Rectangle:
             pos: self.pos
             size: self.size
     
     Label:
         text: 'Buat Anggaran Baru'
+        bold: True
         color: 0,0,0,1
         size_hint_y: None
         height: 30
@@ -37,7 +45,7 @@ Builder.load_string("""
         input_filter: 'int'
     
     RoundedButton:
-        text: 'save'
+        text: 'Save'
         size_hint_y: None
         height: '40dp'
         bg_color: [0, 0, 0, 1]

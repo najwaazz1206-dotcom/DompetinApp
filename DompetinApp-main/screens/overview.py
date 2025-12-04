@@ -13,7 +13,7 @@ Builder.load_string("""
     spacing: 20
     canvas.before:
         Color:
-            rgba:  1, 1, 1, 1
+            rgba:  1, 1, 1, 0.6
         RoundedRectangle:
             pos: self.pos
             size: self.size
@@ -60,7 +60,14 @@ Builder.load_string("""
     spacing: 20
     canvas.before:
         Color:
-            rgba: 0.97, 0.93, 0.86, 1
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "Asset/cobabg.png"
+                    
+        Color:
+            rgba: 0.98, 0.94, 0.85, 0.2  
         Rectangle:
             pos: self.pos
             size: self.size

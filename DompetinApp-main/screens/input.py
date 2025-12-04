@@ -59,7 +59,7 @@ Builder.load_string("""
         Widget: 
 
         RoundedButton:
-            text: 'save'
+            text: 'Save'
             size_hint_y: None
             height: '50dp'
             bg_color: [0, 0, 0, 1]

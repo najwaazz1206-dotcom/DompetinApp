@@ -15,7 +15,8 @@ from screens.input import InputScreen
 from screens.home import HomeContent
 from screens.budget import BudgetContent
 from screens.akun import AkunContent
-from screens.overview import OverviewContent  # <-- Fitur baru (pengganti Grafik)
+from screens.overview import OverviewContent  # <-- Fitur baru (pengga  nti Grafik)
+from kivy.uix.behaviors.togglebutton import ToggleButtonBehavior
 
 # --- KONFIGURASI WINDOW ---
 # Mengatur ukuran agar mirip tampilan HP
@@ -48,6 +49,7 @@ Builder.load_string("""
             SidebarItem:
                 icon: "Asset/home.png"
                 text: "Home"
+                state: 'down'
                 on_release: app.change_screen('Home')
 
             SidebarItem:
@@ -78,12 +80,30 @@ Builder.load_string("""
             spacing: 10
 
 
-<SidebarItem@ButtonBehavior+BoxLayout>:
+<SidebarItem@ToggleButtonBehavior+BoxLayout>:
+    group: 'menu_utama'   
+    allow_no_selection: False
+                         
     orientation: "vertical"
     spacing: 5
     size_hint_y: None
-    height: dp(65)
-    background_color: 0,0,0,0
+    height: dp(100)
+    padding: [0, dp(10), 0, dp(8)]
+    spacing: dp(2)
+    
+    canvas.before:
+        Color:
+            rgba: (0, 0, 0, 0.15) if self.state == 'down' else (0, 0, 0, 0)    
+        RoundedRectangle:
+            pos: self.x + dp(14), self.y + dp(1)
+            size: self.width - dp(20), self.height - dp(10)
+            radius: [dp(25),]
+        Color:
+            rgba: (1, 1, 1, 1) if self.state == 'down' else (0, 0, 0, 0)
+        RoundedRectangle:
+            pos: self.x + dp(10), self.y + dp(5)
+            size: self.width - dp(20), self.height - dp(10)
+            radius: [dp(25),]
 
     icon: ""
     text: ""
@@ -91,12 +111,16 @@ Builder.load_string("""
     Image:
         source: root.icon
         size_hint_y: 0.7
+        allow_stretch: True
+        keep_ratio: True
+        color: (0.2, 0.2, 0.2, 1) if root.state == 'down' else (0, 0, 0, 1)
 
     Label:
         text: root.text
         font_size: "12sp"
-        color: 0,0,0,1
-        size_hint_y: 0.3
+        size_hint_y: 0.3    
+        color: (0,0,0,1) if root.state == 'down' else (0,0,0,0.5) 
+        bold: True if root.state == 'down' else False 
 """)
 
 # --- LOGIKA MAIN SCREEN ---

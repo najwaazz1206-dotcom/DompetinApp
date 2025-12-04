@@ -17,9 +17,17 @@ Builder.load_string("""
         orientation: 'vertical'
         padding: [30, 20]
         spacing: 20
+        
         canvas.before:
             Color:
-                rgba: 0.97, 0.93, 0.86, 1
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "Asset/cobabg.png"
+                    
+            Color:
+                rgba: 0.98, 0.94, 0.85, 0.2  
             Rectangle:
                 pos: self.pos
                 size: self.size
@@ -27,13 +35,16 @@ Builder.load_string("""
         # ======================= HEADER (DOMPETIN DIHAPUS) ======================
         BoxLayout:
             size_hint_y: None
-            height: "140dp"
-            spacing: 10
+            height: "100dp"
+            spacing: 20
             Image:
-                source: 'Asset/wallet_logo.png'
+                padding: 0,1
+                source: 'Asset/logodompetin.png'
                 size_hint_x: None
-                width: '140dp'
+                width: '100dp'
+                fit_mode: 'contain'
             Label:
+                padding: 0,1
                 text: "Home"
                 font_size: "32sp"
                 bold: True
@@ -48,6 +59,31 @@ Builder.load_string("""
             size_hint_y: None
             height: "200dp" 
             spacing: 10
+            
+            # Total Saldo (VERTICAL)
+            # Total Saldo
+            BoxLayout:
+                orientation: 'vertical'
+                padding: "10dp"
+                size_hint_y: 0.8
+                canvas.before:
+                    Color:
+                        rgba: 1, 1, 1, 0.6
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]
+                
+                Label:
+                    text: "Total Saldo"
+                    bold: True
+                    font_size: "18sp"
+                    color: 0, 0.25, 0, 1
+                Label:
+                    text: root.txt_saldo
+                    font_size: "22sp"
+                    bold: True
+                    color: 0,0,0,
 
             # Pemasukan & Pengeluaran (HORIZONTAL)
             BoxLayout:
@@ -61,13 +97,14 @@ Builder.load_string("""
                     size_hint_y: 0.8
                     canvas.before:
                         Color:
-                            rgba: 0.88, 0.93, 0.83, 1
+                            rgba: 0.88, 0.93, 0.83, 0.6
                         RoundedRectangle:
                             pos: self.pos
                             size: self.size
                             radius: [20]
                     Label:
                         text: "Pemasukan"
+                        bold: True
                         font_size: "18sp"
                         color: 0,0,0,1
                     Label:
@@ -83,13 +120,14 @@ Builder.load_string("""
                     size_hint_y: 0.8
                     canvas.before:
                         Color:
-                            rgba: 0.88, 0.93, 0.83, 1
+                            rgba: 0.88, 0.93, 0.83, 0.6
                         RoundedRectangle:
                             pos: self.pos
                             size: self.size
                             radius: [20]
                     Label:
                         text: "Pengeluaran"
+                        bold: True
                         font_size: "18sp"
                         color: 0,0,0,1
                     Label:
@@ -98,30 +136,6 @@ Builder.load_string("""
                         bold: True
                         color: 0.9, 0.2, 0.2, 1
 
-            # Total Saldo (VERTICAL)
-            # Total Saldo
-            BoxLayout:
-                orientation: 'vertical'
-                padding: "10dp"
-                size_hint_y: 0.8
-                canvas.before:
-                    Color:
-                        rgba: 0.88, 0.93, 0.83, 1
-                    RoundedRectangle:
-                        pos: self.pos
-                        size: self.size
-                        radius: [20]
-                
-                Label:
-                    text: "Total Saldo"
-                    font_size: "18sp"
-                    color: 0,0,0,1
-                Label:
-                    text: root.txt_saldo
-                    font_size: "22sp"
-                    bold: True
-                    color: 0,0,0,1
-
         # ======================= BUTTONS ============================
         BoxLayout:
             size_hint_y: None
@@ -129,11 +143,11 @@ Builder.load_string("""
             spacing: 10
             RoundedButton:
                 text: "+ Pemasukan"
-                bg_color: [0.2, 0.75, 0.3, 1]
+                bg_color: [0.2, 0.75, 0.3, 0.7]
                 on_release: app.open_input('pemasukan')
             RoundedButton:
                 text: "- Pengeluaran"
-                bg_color: [0.9, 0.25, 0.25, 1]
+                bg_color: [0.9, 0.25, 0.25, 0.7]
                 on_release: app.open_input('pengeluaran')
 
         Label:
