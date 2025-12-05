@@ -99,7 +99,7 @@ Builder.load_string("""
             size: self.width - dp(20), self.height - dp(10)
             radius: [dp(25),]
         Color:
-            rgba: (1, 1, 1, 1) if self.state == 'down' else (0, 0, 0, 0)
+            rgba: (0.74, 0.72, 0.67, 1) if self.state == 'down' else (0, 0, 0, 0)
         RoundedRectangle:
             pos: self.x + dp(10), self.y + dp(5)
             size: self.width - dp(20), self.height - dp(10)
