@@ -87,7 +87,7 @@ Builder.load_string("""
     orientation: "vertical"
     spacing: 5
     size_hint_y: None
-    height: dp(100)
+    height: dp(85)
     padding: [0, dp(10), 0, dp(8)]
     spacing: dp(2)
     
