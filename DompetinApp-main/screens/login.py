@@ -84,25 +84,6 @@ KV = """
                 height: dp(48)
                 multiline: False
 
-            # --- LINK LUPA PASSWORD (Rata Kanan) ---
-            BoxLayout:
-                size_hint_y: None
-                height: dp(20)
-                orientation: 'horizontal'
-                
-                Widget: # Spacer agar teks terdorong ke kanan
-                
-                Button:
-                    text: "Lupa kata sandi?"
-                    size_hint_x: None
-                    width: dp(120)
-                    font_size: dp(12)
-                    color: 0.4, 0.4, 0.4, 1 # Abu-abu
-                    background_normal: ''
-                    background_color: 0, 0, 0, 0 # Transparan
-                    on_release: print("Tombol Lupa Password ditekan") 
-                    # Ganti print() di atas dengan navigasi screen, misal: root.manager.current = 'forgot_pass'
-
             # --- TOMBOL LOGIN ---
             RoundedButton:
                 text: "MASUK"
@@ -118,40 +99,6 @@ KV = """
             Widget:
                 size_hint_y: None
                 height: dp(10)
-
-            # --- BAGIAN DAFTAR (Paling Bawah) ---
-            BoxLayout:
-                size_hint_y: None
-                height: dp(30)
-                orientation: 'horizontal'
-                spacing: dp(5)
-                # Agar posisi di tengah horizontal
-                padding: [0, 0, 0, 0] 
-                
-                # Spacer kiri (untuk centering manual jika perlu, atau gunakan AnchorLayout)
-                Widget: 
-
-                Label:
-                    text: "Belum punya akun?"
-                    font_size: dp(12)
-                    color: 0.5, 0.5, 0.5, 1
-                    size_hint_x: None
-                    width: self.texture_size[0]
-
-                Button:
-                    text: "Daftar Sekarang"
-                    font_size: dp(12)
-                    bold: True
-                    color: 0.1, 0.35, 0.1, 1 # Hijau
-                    background_normal: ''
-                    background_color: 0, 0, 0, 0 # Transparan
-                    size_hint_x: None
-                    width: dp(100)
-                    on_release: print("Pindah ke halaman Daftar")
-                    # Ganti print() dengan: root.manager.current = 'register'
-
-                # Spacer kanan
-                Widget: 
 
         # Spacer Bawah Utama
         Widget:
