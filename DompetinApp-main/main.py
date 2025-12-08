@@ -4,9 +4,6 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.properties import StringProperty
 from components import RoundedButton, RoundedInput, NavButton
-
-# --- IMPORT LAYAR/FITUR ---
-# Mengambil logika setiap halaman dari folder screens/
 from screens.login import LoginScreen
 from screens.input import InputScreen
 from screens.home import HomeContent
