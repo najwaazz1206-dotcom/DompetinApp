@@ -3,9 +3,6 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 from kivy.properties import StringProperty
-
-# --- IMPORT KOMPONEN CUSTOM ---
-# Mengambil widget tombol dan input dari file components.py
 from components import RoundedButton, RoundedInput, NavButton
 
 # --- IMPORT LAYAR/FITUR ---
