@@ -38,7 +38,7 @@ KV = """
             orientation: "vertical"
             size_hint: (None, None)
             width: min(root.width * 0.85, dp(380))
-            height: self.minimum_height # Tinggi otomatis mengikuti isi
+            height: self.minimum_height 
             pos_hint: {"center_x": 0.5}
             padding: dp(30)
             spacing: dp(15)
@@ -52,7 +52,7 @@ KV = """
                     size: self.size
                     radius: [20,]
                 Color:
-                    rgba: 1, 1, 1, 1 # Warna Kartu Putih
+                    rgba: 1, 1, 1, 0.8
                 RoundedRectangle:
                     pos: self.pos
                     size: self.size
@@ -98,11 +98,22 @@ KV = """
             # Spacer pemisah antara tombol login dan daftar
             Widget:
                 size_hint_y: None
-                height: dp(10)
+                height: dp(5)
+
+            Label:
+                text: "Developed by: Najwa | Syifa | Zaqia"
+                font_size: dp(14)
+                color: 0.4, 0.4, 0.4, 1 # Warna abu-abu lembut
+                size_hint_y: None
+                height: dp(30)
+                # Menetapkan posisi absolut di bagian bawah
+                pos_hint: {'bottom': 0, 'center_x': 0.5} 
+                padding: dp(0), dp(5) # Memberi sedikit padding di bawah
 
         # Spacer Bawah Utama
         Widget:
             size_hint_y: 0.3
+            
 """
 
 Builder.load_string(KV)
