@@ -91,6 +91,14 @@ KV = """
                 background_color: (0,0,0,0)
                 color: (0.2, 0.4, 0.2, 1)
                 on_release: root.switch_form()
+            
+            Label:
+                text: "developed by: Najwa|Syifa|Zaqia"
+                font_size: dp(14)
+                bold: True
+                color: 0.1, 0.3, 0.1, 1
+                size_hint_y: None
+                height: dp(20)
 
 """
 
